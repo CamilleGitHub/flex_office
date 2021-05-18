@@ -1,0 +1,14 @@
+<div>
+<h1>Change your booking for <%= @office.name %> </h1>
+<% if @office.photo.attached?  %>
+  <%= cl_image_tag @office.photo.key, height: 300, width: 400, crop: :fill %></p>
+<% end %>
+</div>
+
+<div class="form col-4 offset-4 mt-5">
+  <%= simple_form_for [@booking] do |form| %>
+    <p><%= form.input :start_date %></p>
+    <p><%= form.input :end_date %></p>
+    <p><%= form.submit 'Change my booking request', class: 'btn btn-outline-primary'%></p>
+  <% end %>
+</div>
