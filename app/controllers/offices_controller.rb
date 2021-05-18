@@ -31,6 +31,15 @@ class OfficesController < ApplicationController
 
   def update
     authorize @office
+    @office = Office.find(params[:id])
+    @office.update(office_params)
+    redirect_to office_path(@office)
+  end
+
+  def destroy
+    authorize @office
+    @office = Office.find(params[:id])
+    @office.destroy
   end
 
   private
