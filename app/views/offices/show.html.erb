@@ -1,2 +1,22 @@
-<h1>Offices#show</h1>
-<p>Find me in app/views/offices/show.html.erb</p>
+<h2><%= @office.title %></h2>
+<%= simple_form_for(@office) do |f| %>
+  <p><%= f.input :name %></p>
+  <p><%= f.input :address %></p>
+  <p><%= f.input :city %></p>
+  <p><%= f.input :price %></p>
+  <p><%= f.input :capacity %></p>
+  <p><%= f.check_box :completed %>
+  <%= f.label :completed, 'completed ?' %></p>
+  <p><%= f.submit 'Update', class: 'btn btn-success' %></p>
+<% end %>
+
+<%= link_to "Edit this Office", edit_path, class: 'btn btn-warning' %>
+
+<%= link_to "Delete #{@office.title}",
+        Office_path(@office),
+        method: :delete,
+        class: 'btn btn-danger',
+        data: { confirm: "Are you sure?" } %>
+
+
+<%= link_to "Return to the list", index_path, class: 'btn btn-primary' %>

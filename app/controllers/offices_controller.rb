@@ -26,7 +26,16 @@ class OfficesController < ApplicationController
   end
 
   def update
+    @office = Office.find(params[:id])
+    @office.update(office_params)
+    redirect_to office_path(@office)
   end
+
+  def destroy
+    @office = Office.find(params[:id])
+    @office.destroy
+  end
+
   private
 
   def office_params
