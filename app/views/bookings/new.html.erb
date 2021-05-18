@@ -1,0 +1,10 @@
+<h1>Make a new booking for <%= @office.name %> </h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+<div class="form col-4 offset-4 mt-5">
+  <%= simple_form_for [@office, @booking] do |form| %>
+    <p><%= form.input :start_date %></p>
+    <p><%= form.input :end_date %></p>
+    <p><%= form.submit 'Send my booking request', class: 'btn btn-outline-primary'%></p>
+  <% end %>
+</div>
