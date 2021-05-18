@@ -30,8 +30,8 @@ class OfficesController < ApplicationController
   end
 
   def update
-    authorize @office
     @office = Office.find(params[:id])
+    authorize @office
     @office.update(office_params)
     redirect_to office_path(@office)
   end
