@@ -1,0 +1,11 @@
+<div class="form col-4 offset-4 mt-5">
+  <h1 class="title">ADD A NEW OFFICE</h1>
+  <%= simple_form_for(@office) do |form| %>
+    <p><%= form.input :name %></p>
+    <p><%= form.input :address %></p>
+    <p><%= form.input :city %></p>
+    <p><%= form.input :price %></p>
+    <p><%= form.input :capacity %></p>
+    <p><%= form.submit 'Add an office', class: 'btn btn-outline-primary'%></p>
+  <% end %>
+</div>

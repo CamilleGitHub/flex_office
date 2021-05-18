@@ -1,0 +1,7 @@
+
+<div class="container col-4 offset-4 mt-5">
+  <h1>THE OFFICES</h1>
+  <% @offices.each do |office| %>
+    <p><%= link_to(office.name, office_path(office)) %></p>
+  <% end %>
+</div>
