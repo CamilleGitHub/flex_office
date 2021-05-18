@@ -39,6 +39,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:name, :address, :city, :capacity, :price)
+    params.require(:office).permit(:name, :address, :city, :capacity, :price, :photo)
   end
 end

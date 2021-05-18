@@ -4,12 +4,13 @@
   <p><%= @office.city %></p>
   <p><%= @office.price %></p>
   <p><%= @office.capacity %></p>
+  <%= cl_image_tag @office.photo.key, height: 300, width: 400, crop: :fill %>
 
-  <%= link_to "Edit this Office", edit_path, class: 'btn btn-warning' %>
+  <%= link_to "Edit this Office", office_path, class: 'btn btn-warning' %>
 
   <%= link_to "Delete #{@office.name}",
-        office_path(@office),
+        offices_path(@office),
         method: :delete,
         class: 'btn btn-danger',
-        data: { confirm: "Are you sure?" } %> | <%= link_to "Return to the list", index_path, class: 'btn btn-primary' %>
+        data: { confirm: "Are you sure?" } %> | <%= link_to "Return to the list", offices_path, class: 'btn btn-primary' %>
 </div>

@@ -4,8 +4,9 @@
     <p><%= form.input :name %></p>
     <p><%= form.input :address %></p>
     <p><%= form.input :city %></p>
-    <p><%= form.input :price %></p>
     <p><%= form.input :capacity %></p>
+    <p><%= form.input :price %></p>
+    <p><%= f.input :photo, as: :file %></p>
     <p><%= form.submit 'Add an office', class: 'btn btn-outline-primary'%></p>
   <% end %>
 </div>
