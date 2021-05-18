@@ -1,0 +1,17 @@
+<div class="card-trip">
+  <%= cl_image_tag booking.office.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <h1><%= booking.office.name %></h1>
+      <h3><%= booking.office.address %></h3>
+      <p><%= booking.office.city %></p>
+    </div>
+    <div>
+      <h2 class="card-trip-pricing"><%= booking.office.capacity%>   <i class="fas fa-users"></i></h2>
+      <h2 class="card-trip-pricing"><%= booking.office.price %> € / day </h2>
+    </div>
+    <h3> <%= booking.start_date %></h3>
+    <h3> <%= booking.end_date %></h3>
+    <h3><%= booking.total_price %></h3>
+  </div>
+</div>
