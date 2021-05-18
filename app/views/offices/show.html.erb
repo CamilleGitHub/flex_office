@@ -1,22 +1,14 @@
-<h2><%= @office.title %></h2>
-<%= simple_form_for(@office) do |f| %>
-  <p><%= f.input :name %></p>
-  <p><%= f.input :address %></p>
-  <p><%= f.input :city %></p>
-  <p><%= f.input :price %></p>
-  <p><%= f.input :capacity %></p>
-  <p><%= f.check_box :completed %>
-  <%= f.label :completed, 'completed ?' %></p>
-  <p><%= f.submit 'Update', class: 'btn btn-success' %></p>
-<% end %>
+<div class="container">
+  <h2><%= @office.name %></h2>
+  <h3><%= @office.address %></h3>
+  <p><%= @office.city %></p>
+  <p><%= @office.price %></p>
+  <p><%= @office.capacity %></p>
 
-<%= link_to "Edit this Office", edit_path, class: 'btn btn-warning' %>
+  <%= link_to "Edit this Office", edit_path, class: 'btn btn-warning' %>
 
-<%= link_to "Delete #{@office.title}",
-        Office_path(@office),
+  <%= link_to "Delete #{@office.name}",
+        office_path(@office),
         method: :delete,
         class: 'btn btn-danger',
-        data: { confirm: "Are you sure?" } %>
-
-
-<%= link_to "Return to the list", index_path, class: 'btn btn-primary' %>
+        data: { confirm: "Are you sure?" } %> | <%= link_to "Return to the list", index_path, class: 'btn btn-primary' %>
