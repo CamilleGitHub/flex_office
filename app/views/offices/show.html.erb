@@ -4,9 +4,11 @@
   <p><%= @office.city %></p>
   <p><%= @office.price %></p>
   <p><%= @office.capacity %></p>
-  <%= cl_image_tag @office.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if @office.photo.attached? %>
+    <%= cl_image_tag @office.photo.key, height: 300, width: 400, crop: :fill %></p>
+  <% end %>
 
-  <%= link_to "Edit this Office", office_path, class: 'btn btn-warning' %>
+  <%= link_to "Edit this Office", edit_office_path, class: 'btn btn-warning' %>
 
   <%= link_to "Delete #{@office.name}",
         offices_path(@office),
