@@ -4,21 +4,25 @@
   <div class="m-5">
     <h1>Your bookings</h1>
 
+    <hr>
+
     <% if @bookings.count == 0 %>
       <%= "You don't have any booking." %>
     <% else %>
     <div class="grid">
           <div class=" text-center cards_display">
-      <% @bookings.each do |booking| %>
-        <%= render "shared/booking_card", booking: booking %>
-      <% end %>
-    <% end %>
-    </div>
+            <% @bookings.each do |booking| %>
+              <%= render "shared/booking_card", booking: booking %>
+            <% end %>
+          </div>
     </div>
   </div>
+          <% end %>
 
   <div class="m-5">
     <h1>Your rentings</h1>
+
+    <hr>
 
         <% if @bookings_as_owner.count == 0 %>
           <%= "You don't have any booking for your offices." %>
