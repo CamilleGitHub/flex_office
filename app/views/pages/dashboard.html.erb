@@ -5,7 +5,6 @@
   <div class="custom-container min-vh-100">
     <div>
       <h1>Your bookings</h1>
-      <hr>
       <% if @bookings.count == 0 %>
         <%= "You don't have any booking." %>
       <% else %>
@@ -18,10 +17,8 @@
         </div>
       <% end %>
     </div>
-
     <div class="mt-5">
       <h1>Your rentings</h1>
-      <hr>
       <% if @bookings_as_owner.count == 0 %>
         <%= "You don't have any booking for your offices." %>
       <% else %>
@@ -36,4 +33,3 @@
     </div>
   </div>
 </div>
-

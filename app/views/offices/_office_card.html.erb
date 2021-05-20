@@ -1,6 +1,11 @@
 <%= link_to office_path(office) do %>
   <div class="card-trip">
+
+  <% if office.photo.attached? %>
     <%= cl_image_tag office.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+  <% end %>
+
 <% end %>
     <div class="card-trip-infos">
       <div>
