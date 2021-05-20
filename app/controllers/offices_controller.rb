@@ -1,9 +1,10 @@
 class OfficesController < ApplicationController
   def index
-    if params[:search][:query] == ""
+    # if params[:search].blank? || params[:search][:query].blank?
+    if params.dig(:search, :query).blank?
       @offices = Office.all
     else
-      @offices = Office.near(params[:city], 10)
+      @offices = Office.near(params.dig(:search, :query), 10)
     end
     @markers = @offices.geocoded.map do |office|
       {
