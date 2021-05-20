@@ -3,3 +3,10 @@ display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 display: flex;
 }
+
+.center-cropped.text-center {
+  background-size: cover;
+  background-position: 47% 48%;
+  height: 181px;
+  padding-top: 60px;
+}
