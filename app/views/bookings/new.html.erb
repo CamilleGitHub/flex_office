@@ -1,11 +1,11 @@
-<div class="container">
+<div class="custom-container">
   <h1>Make a new booking for <%= @office.name %> </h1>
   <p>Please choose your date</p>
 
   <div class="form col-4 offset-4 mt-5">
     <%= simple_form_for [@office, @booking] do |form| %>
-      <p><%= form.input :start_date %></p>
-      <p><%= form.input :end_date %></p>
+      <p><%= form.input :start_date, as: :date, html5: true %></p>
+      <p><%= form.input :end_date, as: :date, html5: true %></p>
       <p><%= form.submit 'Send my booking request', class: 'btn btn-outline-primary'%></p>
     <% end %>
   </div>
