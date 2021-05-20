@@ -1,12 +1,15 @@
-<div class="custom-container">
-  <h1>Make a new booking for <%= @office.name %> </h1>
-  <p>Please choose your date</p>
+<div style= "background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 100%), url('https://source.unsplash.com/_-KLkj7on_c/1600x900')">
+  <div class="custom-container">
+    <h1>Make a new booking for <%= @office.name %> </h1>
+    <h4>Please choose your date</h4>
+    <br>
 
-  <div class="form col-4 offset-4 mt-5">
-    <%= simple_form_for [@office, @booking] do |form| %>
-      <p><%= form.input :start_date, as: :date, html5: true %></p>
-      <p><%= form.input :end_date, as: :date, html5: true %></p>
-      <p><%= form.submit 'Send my booking request', class: 'btn btn-outline-primary'%></p>
-    <% end %>
+    <div class="form col-4 offset-4 mt-5">
+      <%= simple_form_for [@office, @booking] do |form| %>
+        <p><%= form.input :start_date, as: :date, html5: true %></p>
+        <p><%= form.input :end_date, as: :date, html5: true %></p>
+        <p><%= form.submit 'Send my booking request', class: 'btn btn-outline-primary'%></p>
+      <% end %>
+    </div>
   </div>
 </div>
