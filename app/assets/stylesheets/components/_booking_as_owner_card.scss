@@ -1,0 +1,49 @@
+
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-validate {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  opacity: 1;
+}
+
+.card-trip-infos .card-trip-decline {
+  position: absolute;
+  right: 36px;
+  top: -10px;
+  width: 40px;
+}
+
+.validate {
+  font-size: 25px;
+  top: -12px;
+  position: absolute;
+  color: white;
+  background-color: green;
+  border-radius: 50%;
+  &:hover {
+    color: green;
+    background-color: white;
+  }
+}
+
+.decline {
+  font-size: 25px;
+  top: -12px;
+  right: 10px;
+  position: absolute;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  &:hover {
+    color: red;
+    background-color: white;
+  }
+}

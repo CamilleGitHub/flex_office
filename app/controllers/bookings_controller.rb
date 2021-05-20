@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     @booking.office = @office
     @booking.user = current_user
     @booking.status = "pending"
+    @booking.total_price = @office.price * ((@booking.end_date - @booking.start_date) + 1)
     if @booking.save
       redirect_to dashboard_path
     else
@@ -36,6 +37,22 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "declined"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   private
