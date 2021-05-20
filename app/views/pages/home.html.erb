@@ -5,7 +5,7 @@
     with <strong>Flex Office</strong></h1>
     <p>Change your life and book an office around the world.</p>
 
-    <a class="btn btn-warning" href="#">Book an office now</a>
+    <%= link_to "Book an office now", offices_path, class: "btn btn-warning" %>
 
     <div class="search-bar mt-4 ">
       <%= simple_form_for :search, url: offices_path, method: :get do |f| %>
@@ -17,7 +17,6 @@
         </div>
       <% end %>
     </div>
-
   </div>
 </div>
 

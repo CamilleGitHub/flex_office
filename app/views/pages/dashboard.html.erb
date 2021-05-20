@@ -1,8 +1,11 @@
-<div class="custom-container">
-  <h1>Hello <%= @user.first_name %> !</h1>
+<div class="center-cropped text-center" style= "background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 100%), url('https://res.cloudinary.com/moi-rezvani-leo/image/upload/v1621507578/nastuh-abootalebi-J1rNS2qv8BQ-unsplash_czgtka.jpg');">
+<h1>Hello <%= @user.first_name %> !</h1>
+</div>
+<div class="bg-white">
+  <div class="custom-container min-vh-100">
+    <div>
+      <h1>Your bookings</h1>
 
-  <div class="m-5">
-    <h1>Your bookings</h1>
 
     <hr>
 
@@ -29,12 +32,19 @@
         <% else %>
           <div class="grid">
             <div class="text-center cards_display">
-            <% @bookings_as_owner.each do |booking| %>
-            <%= render "shared/booking_card", booking: booking %>
-        <% end %>
+
+      <% if @bookings.count == 0 %>
+        <%= "You don't have any booking." %>
+      <% else %>
+        <div class="grid">
+          <div class=" text-center cards_display">
+            <% @bookings.each do |booking| %>
+              <%= render "shared/booking_card", booking: booking %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-      </div>
-   </div>
+    </div>
   </div>
 </div>
 
