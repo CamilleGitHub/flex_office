@@ -4,7 +4,20 @@
     <h1>Find a great place for your next team meeting <br>
     with <strong>Flex Office</strong></h1>
     <p>Change your life and book an office around the world.</p>
+
     <a class="btn btn-warning" href="#">Book an office now</a>
+
+    <div class="search-bar mt-4 ">
+      <%= simple_form_for :search, url: offices_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Find a city" />
+          <button name="button" type="submit" class="btn btn-success">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
 

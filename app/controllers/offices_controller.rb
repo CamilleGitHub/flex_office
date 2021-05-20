@@ -1,6 +1,10 @@
 class OfficesController < ApplicationController
   def index
-    @offices = Office.all
+    if params[:search][:query] == ""
+      @offices = Office.all
+    else
+      @offices = Office.near(params[:city], 10)
+    end
     @markers = @offices.geocoded.map do |office|
       {
         lat: office.latitude,
@@ -24,6 +28,7 @@ class OfficesController < ApplicationController
     @office = Office.new(office_params)
     authorize @office
     @office.user = current_user
+
     if @office.save
       redirect_to office_path(@office)
     else
