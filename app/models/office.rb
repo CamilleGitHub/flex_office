@@ -1,4 +1,6 @@
 class Office < ApplicationRecord
+  validates :name, presence: true
+  validates :address, presence: true
   belongs_to :user
   has_one_attached :photo
   has_many :bookings
