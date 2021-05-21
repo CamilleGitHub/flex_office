@@ -1,12 +1,18 @@
-<div class="form col-4 offset-4 mt-5">
-  <h1 class="title">ADD A NEW OFFICE</h1>
-  <%= simple_form_for(@office) do |form| %>
-    <p><%= form.input :name %></p>
-    <p><%= form.input :address %></p>
-    <p><%= form.input :city %></p>
-    <p><%= form.input :capacity %></p>
-    <p><%= form.input :price %></p>
-    <p><%= form.input :photo, as: :file %></p>
-    <p><%= form.submit 'Add an office', class: 'btn btn-outline-primary'%></p>
-  <% end %>
+<div style= "background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 100%), url('https://source.unsplash.com/_-KLkj7on_c/1600x900')">
+  <div class="form col-4 offset-4">
+    <div class="py-10">
+    <h1 class="title">ADD A NEW OFFICE</h1>
+    </div>
+    <hr>
+    <%= simple_form_for(@office) do |form| %>
+      <p><%= form.input :name %></p>
+      <p><%= form.input :address %></p>
+      <p><%= form.input :city %></p>
+      <p><%= form.input :capacity %></p>
+      <p><%= form.input :price, label: "Price € / day" %></p>
+      <p><%= form.input :photo, as: :file, label: "Download a picture of your office" %></p>
+      <hr>
+      <p><%= form.submit 'Add an office', class: 'btn btn-outline-primary'%></p>
+    <% end %>
+  </div>
 </div>
