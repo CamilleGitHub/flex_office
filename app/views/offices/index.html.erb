@@ -1,8 +1,10 @@
 
-<div class="container col-4 offset-4 mt-3 mb-4 text-align-center">
-  <h1>Choose an office</h1>
+<div class="center-cropped text-center text-align-center" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 100%), url('https://loptimisme.pro/wp-content/uploads/2020/07/annie-spratt-FSFfEQkd1sc-unsplash.jpg')">
+  <div class="pb-5">
+    <h1>Choose an office</h1>
+  </div>
 </div>
-<div class="office-index-container row mx-5">
+<div class="office-index-container row mx-5 mt-20 bg-white">
   <div class="cards_display col-8 ">
     <% @offices.each do |office| %>
       <%= render "office_card", office: office %>
