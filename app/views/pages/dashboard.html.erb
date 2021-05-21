@@ -10,7 +10,7 @@
         <%= "You don't have any booking." %>
       <% else %>
         <div class="grid">
-          <div class=" text-center cards_display">
+          <div id="bookings" class=" text-center cards_display">
             <% @bookings.each do |booking| %>
             <%= render "shared/booking_card", booking: booking %>
             <% end %>
@@ -30,7 +30,7 @@
             <%= render "shared/booking_as_owner_card", booking: booking %>
             <% end %>
           </div>
-        </div> 
+        </div>
       <% end %>
     </div>
   </div>

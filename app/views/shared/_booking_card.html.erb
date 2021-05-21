@@ -2,6 +2,7 @@
   <div>
     <%= cl_image_tag booking.office.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
+    <h2 class="status-label"><%= booking.status %></h2>
   <div class="card-trip-infos d-flex justify-content-between" >
     <div>
       <h1><%= booking.office.name %></h1>
