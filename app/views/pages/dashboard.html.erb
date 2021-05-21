@@ -18,17 +18,19 @@
         </div>
       <% end %>
     </div>
-    <div class="mt-5">
+    <div class="mt-5"
       <h1>Your rentings</h1>
       <hr>
       <% if @bookings_as_owner.count == 0 %>
-        <%= "You don't have any booking for your offices." %>
+        <%= "You don't have any renting for your offices." %>
       <% else %>
         <div class="grid">
           <div class="text-center cards_display">
             <% @bookings_as_owner.each do |booking| %>
-            <%= render "shared/booking_as_owner_card", booking: booking %>
-            <% end %>
+              <% if booking.status == "accepted" || "pending" %>
+                <%= render "shared/booking_as_owner_card", booking: booking %>
+              <% end %>
+             <% end %>
           </div>
         </div>
       <% end %>
